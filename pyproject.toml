@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "h-mcmc-fmp"
+version = "0.1.0"
+description = "H-MCMC-FMP hyperparameter optimization"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+]
+
+[tool.setuptools]
+packages = ["hpo_rl", "hpo_rl.baselines", "hpo_rl.backends"]
+
+# The source directory is not a legal Python identifier (hyphens), so the
+# install name stays `hpo_rl` and maps onto H-MCMC-FMP_algo/.
+[tool.setuptools.package-dir]
+hpo_rl = "H-MCMC-FMP_algo"
